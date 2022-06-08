@@ -1,0 +1,6 @@
+{"level":"warn","message":"Mensaje de advertencia","service":"user-service"}
+{"level":"error","message":"Mensaje de error","service":"user-service"}
+{"level":"warn","message":"Mensaje de advertencia","service":"user-service"}
+{"level":"error","message":"Mensaje de error","service":"user-service"}
+{"level":"warn","message":"Mensaje de advertencia","service":"user-service"}
+{"level":"error","message":"Mensaje de error","service":"user-service"}
