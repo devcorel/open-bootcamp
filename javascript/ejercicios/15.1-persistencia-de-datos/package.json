@@ -1,0 +1,12 @@
+{
+   "name": "15.1-persistencia-de-datos",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "start": "http-server -p 8080 ."
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC"
+}
