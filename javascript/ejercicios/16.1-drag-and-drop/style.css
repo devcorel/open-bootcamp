@@ -1,0 +1,50 @@
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+}
+
+.seccion-borrar {
+   border: 2px solid red;
+   text-align: center;
+   padding: 5px;
+   flex-shrink: 1;
+}
+
+.seccion-borrar img {
+   width: 100px;
+   height: 100px;
+}
+
+.seccion {
+   flex-grow: 1;
+   background-color: darkslategrey;
+   padding: 1rem;
+   margin: 1rem;
+
+}
+
+.parrafo {
+   background-color: white;
+   padding: 1rem;
+}
+
+.parrafo.dragging {
+   background-color: yellow;
+   opacity: 0.5;
+}
+
+/* .imagen-fantasma-container {
+   display: none;
+} */
+.imagen-fantasma {
+   background-color: red;
+   padding: 1rem;
+   margin: 1rem;
+   opacity: 0.5;
+   width: 25px;
+   height: 25px;
+   position: absolute;
+   left: -100vw;
+}
