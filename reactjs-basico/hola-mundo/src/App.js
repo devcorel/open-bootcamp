@@ -2,9 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 // import Greeting from './components/pure/Greeting';
 // import GreetingFunction from './components/pure/GreetingFunction';
-// import TaskListComponent from './components/container/TaskListComponent';
+import TaskListComponent from './components/container/TaskListComponent';
 import { ContactoList } from './components/container/ContactoList';
-import EjemploMio from './hooks/EjemploMio';
+import { GreetingStyled } from './components/pure/GreetingStyled';
+import { Clock } from './components/pure/Clock';
+// import EjemploMio from './hooks/EjemploMio';
 // import MiComponenteConContexto from './hooks/Ejemplo3';
 // import Ejemplo1 from './hooks/Ejemplo1';
 // import Ejemplo2 from './hooks/Ejemplo2';
@@ -18,7 +20,7 @@ function App() {
             {/* Componente pripio Greeting.jsx */}
             {/* <Greeting name="Israel" /> */}
             {/* <GreetingFunction name="Israel" /> */}
-            {/* <TaskListComponent /> */}
+            <TaskListComponent />
 
             {/* Ejemplos de uso de HOOKS */}
             {/* <Ejemplo1 /> */}
@@ -28,13 +30,16 @@ function App() {
                {/* Todo lo que hay aquí, es tratado como props.children */}
             {/* <h3>Contenido del props.chidren</h3> */}
             {/* </Ejemplo4> */}
-            <EjemploMio />
+            {/* <EjemploMio /> */}
+            <GreetingStyled name="Emilio" />
          </header>
 
          <h1>Ejercicios: </h1>
          <div>
             <ContactoList />
          </div>
+         <hr />
+         <Clock />
       </div>
    );
 }
