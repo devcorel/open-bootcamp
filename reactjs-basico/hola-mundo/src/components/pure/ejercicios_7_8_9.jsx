@@ -3,7 +3,6 @@ import React, { useRef, useState } from 'react';
 export const EjercicioContactos = () => {
    const [contactos, setContactos] = useState(getContactos());
 
-   console.log(contactos);
    return (
       <div
          style={{
@@ -28,6 +27,16 @@ function Contactos({ contactos, setContactos }) {
       });
    };
 
+   const handleChangeStatus = (id) => {
+      let newContactos = contactos.map((contacto) => {
+         if (contacto.id === id) {
+            contacto.estado = !contacto.estado;
+         }
+         return contacto;
+      });
+
+      setContactos(newContactos);
+   };
    return (
       <table>
          <thead>
@@ -51,6 +60,14 @@ function Contactos({ contactos, setContactos }) {
                <th
                   style={{
                      padding: '5px',
+                     width: '200px',
+                  }}
+               >
+                  ESTADO
+               </th>
+               <th
+                  style={{
+                     padding: '5px',
                   }}
                >
                   ACCIONES
@@ -62,6 +79,7 @@ function Contactos({ contactos, setContactos }) {
                <Contacto
                   key={index}
                   contacto={contacto}
+                  onChangeStatus={handleChangeStatus}
                   onDelete={handleDelete}
                />
             ))}
@@ -70,7 +88,7 @@ function Contactos({ contactos, setContactos }) {
    );
 }
 
-function Contacto({ contacto, onDelete }) {
+function Contacto({ contacto, onChangeStatus, onDelete }) {
    return (
       <tr>
          <td
@@ -90,8 +108,21 @@ function Contacto({ contacto, onDelete }) {
          <td
             style={{
                padding: '5px',
+               color: contacto.estado ? 'green' : 'red',
             }}
          >
+            {contacto.estado ? 'ONLINE' : 'OFFLINE'}
+         </td>
+         <td
+            style={{
+               padding: '5px',
+               display: 'flex',
+               gap: '8px',
+            }}
+         >
+            <button onClick={() => onChangeStatus(contacto.id)}>
+               {contacto.estado ? 'Desconectar' : 'Conectar'}
+            </button>
             <button onClick={() => onDelete(contacto.id)}>Borrar</button>
          </td>
       </tr>
@@ -110,6 +141,7 @@ function FormContact({ setContactos }) {
             id: prevState[prevState.length - 1].id + 1,
             nombre: nameRef.current.value,
             email: emailRef.current.value,
+            estado: true,
          },
       ]);
    };
@@ -137,10 +169,25 @@ function FormContact({ setContactos }) {
 
 function getContactos() {
    return [
-      { id: 1, nombre: 'javier', email: 'javer@mail.com' },
-      { id: 2, nombre: 'israel', email: 'israel@mail.com' },
-      { id: 3, nombre: 'ernesto', email: 'ernesto@mail.com' },
-      { id: 4, nombre: 'erick', email: 'erick@mail.com' },
-      { id: 5, nombre: 'luisa', email: 'luisa@mail.com' },
+      { id: 1, nombre: 'javier', email: 'javer@mail.com', estado: true },
+      {
+         id: 2,
+         nombre: 'israel',
+         email: 'israel@mail.com',
+         estado: false,
+      },
+      {
+         id: 3,
+         nombre: 'ernesto',
+         email: 'ernesto@mail.com',
+         estado: false,
+      },
+      { id: 4, nombre: 'erick', email: 'erick@mail.com', estado: true },
+      {
+         id: 5,
+         nombre: 'luisa',
+         email: 'luisa@mail.com',
+         estado: false,
+      },
    ];
 }
