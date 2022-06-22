@@ -4,8 +4,9 @@ import './App.css';
 // import GreetingFunction from './components/pure/GreetingFunction';
 import TaskListComponent from './components/container/TaskListComponent';
 import { ContactoList } from './components/container/ContactoList';
-import { GreetingStyled } from './components/pure/GreetingStyled';
-import { Clock } from './components/pure/Clock';
+import { EjercicioContactos } from './components/pure/ejercicios_7_8_9';
+// import { Clock } from './components/pure/Clock';
+// import { GreetingStyled } from './components/pure/GreetingStyled';
 // import EjemploMio from './hooks/EjemploMio';
 // import MiComponenteConContexto from './hooks/Ejemplo3';
 // import Ejemplo1 from './hooks/Ejemplo1';
@@ -31,15 +32,18 @@ function App() {
             {/* <h3>Contenido del props.chidren</h3> */}
             {/* </Ejemplo4> */}
             {/* <EjemploMio /> */}
-            <GreetingStyled name="Emilio" />
+            {/* <GreetingStyled name="Emilio" /> */}
          </header>
 
          <h1>Ejercicios: </h1>
          <div>
             <ContactoList />
          </div>
+         {/* <hr /> */}
+         {/* <Clock /> */}
          <hr />
-         <Clock />
+
+         <EjercicioContactos />
       </div>
    );
 }

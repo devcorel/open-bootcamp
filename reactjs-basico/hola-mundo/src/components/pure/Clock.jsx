@@ -7,7 +7,7 @@ export const Clock = () => {
 
    return (
       <>
-         {stopClock ? <>Clock stopped</> : <ClockTimmer />}
+         {stopClock ? <>Reloj detenido </> : <ClockTimmer />}
          <button onClick={() => setStopClock(!stopClock)}>
             {stopClock ? 'Start' : 'Stop'}
          </button>
